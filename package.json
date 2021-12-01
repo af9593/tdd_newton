@@ -1,0 +1,22 @@
+{
+  "name": "bankomat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WeeHorse/bankomat-js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WeeHorse/bankomat-js/issues"
+  },
+  "homepage": "https://github.com/WeeHorse/bankomat-js#readme",
+  "devDependencies": {
+    "jest": "^27.3.1"
+  }
+}
