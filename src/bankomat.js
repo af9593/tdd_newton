@@ -15,11 +15,7 @@ module.exports = class Bankomat {
         this.cardInserted = true;
         this.card = card;
         this.msgs.push("Card inserted");
-        if(this.card.pin){
-
-        }else{
-        this.msgs.push("Create a new pincode");
-        }
+        if(!this.card.pin) this.msgs.push("Create a new pincode");
     }
 
     ejectCard(){
@@ -60,7 +56,7 @@ module.exports = class Bankomat {
         }
         else return false
     }
-    
+
     withdraw(amount){
 
         if(amount <= this.machineBalance && amount <= this.card.account.getBalance()){
