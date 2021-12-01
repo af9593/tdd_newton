@@ -19,7 +19,6 @@ module.exports = class Bankomat {
 
         }else{
         this.msgs.push("Create a new pincode");
-            
         }
     }
 
@@ -34,8 +33,9 @@ module.exports = class Bankomat {
     }
 
     enterPin(pin){
-        if(this.card.pin == undefined) {
+        if(this.card.pin === undefined) {
             this.card.pin = pin ;
+            this.msgs.push("Your card is now setup and ready to use");
             return ;
         } 
         
@@ -53,7 +53,16 @@ module.exports = class Bankomat {
         }
     }
 
+    checkMachineBalance(){
+        if(this.machineBalance > 0) {
+            this.msgs.push("Enter amount to withdraw.");
+            return true
+        }
+        else return false
+    }
+    
     withdraw(amount){
+
         if(amount <= this.machineBalance && amount <= this.card.account.getBalance()){
             this.machineBalance -= amount;
             this.card.account.withdraw(amount);
